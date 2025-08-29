@@ -4,144 +4,6 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
-### 🚜 Refactor
-
-- *(policy)* Simplify ServiceDatabasePolicy methods to always return true and add manageBackups method
-
-### 📚 Documentation
-
-- Update changelog
-
-### ⚙️ Miscellaneous Tasks
-
-- Update coolify version to 4.0.0-beta.426 and nightly version to 4.0.0-beta.427
-
-## [4.0.0-beta.425] - 2025-08-28
-
-### 🚀 Features
-
-- *(domains)* Implement domain conflict detection and user confirmation modal across application components
-- *(domains)* Add force_domain_override option and enhance domain conflict detection responses
-
-### 🐛 Bug Fixes
-
-- *(previews)* Simplify FQDN generation logic by removing unnecessary empty check
-- *(templates)* Update Matrix service compose configuration for improved compatibility and clarity
-
-### 🚜 Refactor
-
-- *(urls)* Replace generateFqdn with generateUrl for consistent URL generation across applications
-- *(domains)* Rename check_domain_usage to checkDomainUsage and update references across the application
-- *(auth)* Simplify access control logic in CanAccessTerminal and ServerPolicy by allowing all users to perform actions
-
-### 📚 Documentation
-
-- Update changelog
-- Update changelog
-
-### ⚙️ Miscellaneous Tasks
-
-- Update coolify version to 4.0.0-beta.425 and nightly version to 4.0.0-beta.426
-
-## [4.0.0-beta.424] - 2025-08-27
-
-### 🐛 Bug Fixes
-
-- *(parsers)* Do not modify service names, only for getting fqdns and related envs
-- *(compose)* Temporary allow to edit volumes in apps (compose based) and services
-
-### 📚 Documentation
-
-- Update changelog
-- Update changelog
-
-### ⚙️ Miscellaneous Tasks
-
-- Update coolify version to 4.0.0-beta.424 and nightly version to 4.0.0-beta.425
-
-## [4.0.0-beta.423] - 2025-08-27
-
-### 🚜 Refactor
-
-- *(parsers)* Remove unnecessary hyphen-to-underscore replacement for service names in serviceParser function
-
-### 📚 Documentation
-
-- Update changelog
-
-### ⚙️ Miscellaneous Tasks
-
-- Update coolify version to 4.0.0-beta.423 and nightly version to 4.0.0-beta.424
-
-## [4.0.0-beta.422] - 2025-08-27
-
-### 🐛 Bug Fixes
-
-- *(parsers)* Replace hyphens with underscores in service names for consistency. this allows to properly parse custom domains in docker compose based applications
-- *(parsers)* Implement parseDockerVolumeString function to handle various Docker volume formats and modes, including environment variables and Windows paths. Add unit tests for comprehensive coverage.
-- *(git)* Submodule update command uses an unsupported option (#6454)
-- *(service)* Swap URL for FQDN on matrix template (#6466)
-- *(parsers)* Enhance volume string handling by preserving mode in application and service parsers. Update related unit tests for validation.
-- *(docker)* Update parser version in FQDN generation for service-specific URLs
-
-### 🚜 Refactor
-
-- *(git)* Improve submodule cloning
-
-### 📚 Documentation
-
-- Update changelog
-
-### ⚙️ Miscellaneous Tasks
-
-- Update version
-- Update development node version
-
-## [4.0.0-beta.421] - 2025-08-26
-
-### 🚀 Features
-
-- *(policies)* Add EnvironmentVariablePolicy for managing environment variables ( it was missing )
-
-### 🐛 Bug Fixes
-
-- *(backups)* Rollback helper update for now
-
-### 📚 Documentation
-
-- Update changelog
-
-### ⚙️ Miscellaneous Tasks
-
-- *(core)* Update version
-- *(versions)* Update coolify version to 4.0.0-beta.421 and nightly version to 4.0.0-beta.422
-
-## [4.0.0-beta.420.9] - 2025-08-26
-
-### 🐛 Bug Fixes
-
-- *(backups)* S3 backup upload is failing
-
-### 📚 Documentation
-
-- Update changelog
-
-### ⚙️ Miscellaneous Tasks
-
-- *(core)* Update version
-
-## [4.0.0-beta.420.8] - 2025-08-26
-
-### 🚜 Refactor
-
-- *(policies)* Remove Response type hint from update methods in ApplicationPreviewPolicy and DatabasePolicy for improved flexibility
-
-### 📚 Documentation
-
-- Update changelog
-
-## [4.0.0-beta.420.7] - 2025-08-26
-
 ### 🚀 Features
 
 - *(service)* Add TriliumNext service (#5970)
@@ -205,6 +67,9 @@ All notable changes to this project will be documented in this file.
 - *(docs)* Add tasks for implementing Docker build caching and optimizing staging builds; include detailed acceptance criteria and implementation plans
 - *(docker)* Implement Docker cleanup processing in ScheduledJobManager; refactor server task scheduling to streamline cleanup job dispatching
 - *(docs)* Expand Backlog.md guidelines with comprehensive usage instructions, CLI commands, and best practices for task management to enhance project organization and collaboration
+- *(policies)* Add EnvironmentVariablePolicy for managing environment variables ( it was missing )
+- *(domains)* Implement domain conflict detection and user confirmation modal across application components
+- *(domains)* Add force_domain_override option and enhance domain conflict detection responses
 
 ### 🐛 Bug Fixes
 
@@ -256,6 +121,18 @@ All notable changes to this project will be documented in this file.
 - *(errors)* Update error pages to provide navigation options
 - *(github-deploy-key)* Update background color for selected private keys in deployment key selection UI
 - *(auth)* Enhance authorization checks in application management
+- *(backups)* S3 backup upload is failing
+- *(backups)* Rollback helper update for now
+- *(parsers)* Replace hyphens with underscores in service names for consistency. this allows to properly parse custom domains in docker compose based applications
+- *(parsers)* Implement parseDockerVolumeString function to handle various Docker volume formats and modes, including environment variables and Windows paths. Add unit tests for comprehensive coverage.
+- *(git)* Submodule update command uses an unsupported option (#6454)
+- *(service)* Swap URL for FQDN on matrix template (#6466)
+- *(parsers)* Enhance volume string handling by preserving mode in application and service parsers. Update related unit tests for validation.
+- *(docker)* Update parser version in FQDN generation for service-specific URLs
+- *(parsers)* Do not modify service names, only for getting fqdns and related envs
+- *(compose)* Temporary allow to edit volumes in apps (compose based) and services
+- *(previews)* Simplify FQDN generation logic by removing unnecessary empty check
+- *(templates)* Update Matrix service compose configuration for improved compatibility and clarity
 
 ### 💼 Other
 
@@ -283,11 +160,29 @@ All notable changes to this project will be documented in this file.
 - *(jobs)* Rename job classes to indicate deprecation status
 - Update check frequency logic for cloud and self-hosted environments; streamline server task scheduling and timezone handling
 - *(policies)* Remove Response type hint from update methods in ApplicationPreviewPolicy and DatabasePolicy for improved flexibility
+- *(policies)* Remove Response type hint from update methods in ApplicationPreviewPolicy and DatabasePolicy for improved flexibility
+- *(git)* Improve submodule cloning
+- *(parsers)* Remove unnecessary hyphen-to-underscore replacement for service names in serviceParser function
+- *(urls)* Replace generateFqdn with generateUrl for consistent URL generation across applications
+- *(domains)* Rename check_domain_usage to checkDomainUsage and update references across the application
+- *(auth)* Simplify access control logic in CanAccessTerminal and ServerPolicy by allowing all users to perform actions
+- *(policy)* Simplify ServiceDatabasePolicy methods to always return true and add manageBackups method
 
 ### 📚 Documentation
 
 - *(claude)* Clarify that artisan commands should only be run inside the "coolify" container during development
 - Add AGENTS.md for project guidance and development instructions
+- Update changelog
+- Update changelog
+- Update changelog
+- Update changelog
+- Update changelog
+- Update changelog
+- Update changelog
+- Update changelog
+- Update changelog
+- Update changelog
+- Update changelog
 - Update changelog
 - Update changelog
 - Update changelog
@@ -315,6 +210,15 @@ All notable changes to this project will be documented in this file.
 - *(config)* Disable auto_commit in backlog configuration to prevent automatic commits
 - *(versions)* Update coolify version to 4.0.0-beta.420.8 and nightly version to 4.0.0-beta.420.9 in versions.json and constants.php
 - *(docker)* Update soketi image version to 1.0.10 in production and Windows configurations
+- *(core)* Update version
+- *(core)* Update version
+- *(versions)* Update coolify version to 4.0.0-beta.421 and nightly version to 4.0.0-beta.422
+- Update version
+- Update development node version
+- Update coolify version to 4.0.0-beta.423 and nightly version to 4.0.0-beta.424
+- Update coolify version to 4.0.0-beta.424 and nightly version to 4.0.0-beta.425
+- Update coolify version to 4.0.0-beta.425 and nightly version to 4.0.0-beta.426
+- Update coolify version to 4.0.0-beta.426 and nightly version to 4.0.0-beta.427
 
 ### ◀️ Revert
 
